@@ -4,9 +4,11 @@ spring:
   application:
     name: item-service
   datasource:
-    url: jdbc:mysql://192.168.1.248/xw_taes
+    url: jdbc:mysql://localhost:3306/x_ta
+#    url: jdbc:mysql://192.168.1.248/x_ta
     username: root
-    password: freecg
+#    password: freecg
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
 eureka:
   client:
