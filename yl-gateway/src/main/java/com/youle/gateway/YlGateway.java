@@ -1,4 +1,4 @@
-package com.youle.common.utils.gateway;
+package com.youle.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

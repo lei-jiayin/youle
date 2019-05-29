@@ -7,6 +7,7 @@ spring:
     url: jdbc:mysql://192.168.1.248/xw_taes
     username: root
     password: freecg
+    driver-class-name: com.mysql.jdbc.Driver
 eureka:
   client:
     service-url:
