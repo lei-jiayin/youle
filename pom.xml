@@ -12,6 +12,7 @@
         <module>yl-gateway</module>
         <module>yl-item</module>
         <module>yl-common</module>
+        <module>yl-upload</module>
     </modules>
     <!--打包方式-->
     <packaging>pom</packaging>

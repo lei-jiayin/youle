@@ -11,6 +11,11 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/**
+    #配置上传微服务 需要绕过网关缓存 以/zuul为前缀可绕过缓存 可以通过nginx的rewrite指令实现这一需求
+    upload-service:
+      path: /upload/**
+      serviceId: upload-service
+      strip-prefix: false
 hystrix:
   command:
     default:

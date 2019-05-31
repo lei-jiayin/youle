@@ -4,7 +4,9 @@ import com.youle.common.vo.PageResult;
 import com.youle.item.pojo.Brand;
 import com.youle.item.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +33,20 @@ public class BrandController {
     ){
         PageResult<Brand> result = brandService.queryBrandByPage(page,rows,sortBy,desc,key);
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * 新增品牌
+     * cids 为逗号分割的数组
+     * @param brand
+     * @param cids
+     * @return
+     */
+    @PostMapping
+    public ResponseEntity<Void> saveBrand(Brand brand, @RequestParam("cids")List<Long> cids){
+        brandService.saveBrand(brand,cids);
+        // 无返回值选用build() 有则选用body()
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }
