@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : xw
-Source Server Version : 60011
-Source Host           : localhost:3306
+Source Server         : 192.168.1.248
+Source Server Version : 50510
+Source Host           : 192.168.1.248:3306
 Source Database       : x_ta
 
 Target Server Type    : MYSQL
-Target Server Version : 60011
+Target Server Version : 50510
 File Encoding         : 65001
 
-Date: 2019-05-29 23:14:11
+Date: 2019-06-26 18:14:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `tb_brand`
+-- Table structure for tb_brand
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_brand`;
 CREATE TABLE `tb_brand` (
@@ -25,7 +25,7 @@ CREATE TABLE `tb_brand` (
   `image` varchar(200) DEFAULT '' COMMENT '品牌图片地址',
   `letter` char(1) DEFAULT '' COMMENT '品牌的首字母',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=325402 DEFAULT CHARSET=utf8 COMMENT='品牌表，一个品牌下有多个商品（spu），一对多关系';
+) ENGINE=InnoDB AUTO_INCREMENT=325405 DEFAULT CHARSET=utf8 COMMENT='品牌表，一个品牌下有多个商品（spu），一对多关系';
 
 -- ----------------------------
 -- Records of tb_brand
@@ -195,9 +195,12 @@ INSERT INTO `tb_brand` VALUES ('325396', '飞利浦（PHILIPS）', '', 'P');
 INSERT INTO `tb_brand` VALUES ('325398', '比亚兹（ESK）', '', 'B');
 INSERT INTO `tb_brand` VALUES ('325399', '亿色(ESR)', '', 'Y');
 INSERT INTO `tb_brand` VALUES ('325401', '黑马', 'http://image.leyou.com/group1/M00/00/00/wKg4ZVro8haAdtRLAALAv4YTyno368.png', 'H');
+INSERT INTO `tb_brand` VALUES ('325402', '小黄狗', '', 'X');
+INSERT INTO `tb_brand` VALUES ('325403', 'xxxx', 'http://image.youle.com/q3.jpg', 'X');
+INSERT INTO `tb_brand` VALUES ('325404', 'qqqq', 'http://image.youle.com/1561520754125.jpg', 'Q');
 
 -- ----------------------------
--- Table structure for `tb_category`
+-- Table structure for tb_category
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_category`;
 CREATE TABLE `tb_category` (
@@ -1638,7 +1641,7 @@ INSERT INTO `tb_category` VALUES ('1422', '皮卡（二手）', '1412', '0', '10
 INSERT INTO `tb_category` VALUES ('1423', '面包车（二手）', '1412', '0', '11');
 
 -- ----------------------------
--- Table structure for `tb_category_brand`
+-- Table structure for tb_category_brand
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_category_brand`;
 CREATE TABLE `tb_category_brand` (
@@ -1814,6 +1817,7 @@ INSERT INTO `tb_category_brand` VALUES ('76', '325396');
 INSERT INTO `tb_category_brand` VALUES ('76', '325397');
 INSERT INTO `tb_category_brand` VALUES ('76', '325400');
 INSERT INTO `tb_category_brand` VALUES ('76', '325401');
+INSERT INTO `tb_category_brand` VALUES ('76', '325403');
 INSERT INTO `tb_category_brand` VALUES ('84', '18374');
 INSERT INTO `tb_category_brand` VALUES ('86', '18374');
 INSERT INTO `tb_category_brand` VALUES ('90', '325398');
@@ -1833,12 +1837,14 @@ INSERT INTO `tb_category_brand` VALUES ('117', '18374');
 INSERT INTO `tb_category_brand` VALUES ('128', '18374');
 INSERT INTO `tb_category_brand` VALUES ('167', '6742');
 INSERT INTO `tb_category_brand` VALUES ('170', '6742');
+INSERT INTO `tb_category_brand` VALUES ('229', '325404');
 INSERT INTO `tb_category_brand` VALUES ('324', '18374');
 INSERT INTO `tb_category_brand` VALUES ('326', '18374');
 INSERT INTO `tb_category_brand` VALUES ('327', '18374');
+INSERT INTO `tb_category_brand` VALUES ('1373', '325402');
 
 -- ----------------------------
--- Table structure for `tb_coupon`
+-- Table structure for tb_coupon
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_coupon`;
 CREATE TABLE `tb_coupon` (
@@ -1860,7 +1866,7 @@ CREATE TABLE `tb_coupon` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `tb_order`
+-- Table structure for tb_order
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order`;
 CREATE TABLE `tb_order` (
@@ -1900,7 +1906,7 @@ INSERT INTO `tb_order` VALUES ('992320901993336832', '142900', '142900', '', '2'
 INSERT INTO `tb_order` VALUES ('992342776106586112', '322800', '322800', '', '2', '0', '2018-05-04 17:58:49', null, null, '16', null, 'huge', '0', '上海', '上海', '浦东新区', '航头镇航头路18号传智播客 3号楼', '15800000000', '210000', '虎哥', '0', '2');
 
 -- ----------------------------
--- Table structure for `tb_order_detail`
+-- Table structure for tb_order_detail
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order_detail`;
 CREATE TABLE `tb_order_detail` (
@@ -1926,7 +1932,7 @@ INSERT INTO `tb_order_detail` VALUES ('22', '992342776106586112', '27179308373',
 INSERT INTO `tb_order_detail` VALUES ('23', '992342776106586112', '10987960993', '1', '华为（HUAWEI） nova 智能手机 4G手机 皓月银 (4G+64G)高配', '{\"机身颜色\":\"皓月银\",\"内存\":\"4GB\",\"机身存储\":\"64GB\"}', '142900', 'http://image.leyou.com/images/10/5/1524297467695.jpg');
 
 -- ----------------------------
--- Table structure for `tb_order_status`
+-- Table structure for tb_order_status
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_order_status`;
 CREATE TABLE `tb_order_status` (
@@ -1951,7 +1957,7 @@ INSERT INTO `tb_order_status` VALUES ('992320901993336832', '3', '2018-05-04 16:
 INSERT INTO `tb_order_status` VALUES ('992342776106586112', '2', '2018-05-04 17:58:49', '2018-05-04 18:51:30', null, null, null, '2018-05-04 18:51:33');
 
 -- ----------------------------
--- Table structure for `tb_promotion`
+-- Table structure for tb_promotion
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_promotion`;
 CREATE TABLE `tb_promotion` (
@@ -1973,7 +1979,7 @@ CREATE TABLE `tb_promotion` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `tb_sku`
+-- Table structure for tb_sku
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_sku`;
 CREATE TABLE `tb_sku` (
@@ -2674,7 +2680,7 @@ INSERT INTO `tb_sku` VALUES ('27359021553', '215', '黑马游戏手机2 深空�
 INSERT INTO `tb_sku` VALUES ('27359021554', '215', '黑马游戏手机2 苍穹灰 8GB 128GB', 'http://image.leyou.com/group1/M00/00/00/wKg4ZVrqqWyAZvWJAAIAtobunyc315.jpg', '4199', '1_0_0', '{\"机身颜色\":\"苍穹灰\",\"内存\":\"8GB\",\"机身存储\":\"128GB\"}', '1', '2018-05-15 23:59:27', '2018-05-15 23:59:27');
 
 -- ----------------------------
--- Table structure for `tb_specification`
+-- Table structure for tb_specification
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_specification`;
 CREATE TABLE `tb_specification` (
@@ -2691,7 +2697,48 @@ INSERT INTO `tb_specification` VALUES ('90', '[{\"group\":\"主体\",\"params\":
 INSERT INTO `tb_specification` VALUES ('105', '[{\"group\":\"主体参数\",\"params\":[{\"k\":\"品牌\",\"searchable\":false,\"global\":true,\"numerical\":false,\"unit\":\"\",\"options\":[]},{\"k\":\"型号\",\"searchable\":false,\"global\":false,\"numerical\":false,\"unit\":\"\",\"options\":[]},{\"k\":\"产品颜色\",\"searchable\":false,\"global\":true,\"numerical\":false,\"unit\":\"\",\"options\":[]},{\"k\":\"上市日期\",\"searchable\":false,\"global\":true,\"numerical\":false,\"unit\":\"\",\"options\":[]},{\"k\":\"能效等级\",\"searchable\":true,\"global\":true,\"numerical\":false,\"unit\":\"\",\"options\":[\"一级能效\",\"二级能效\",\"三级能效\",\"政府节能\"]}]},{\"group\":\"显示参数\",\"params\":[{\"k\":\"屏幕尺寸\",\"searchable\":true,\"global\":false,\"numerical\":true,\"unit\":\"英寸\",\"options\":[]},{\"k\":\"屏幕分辨率\",\"searchable\":true,\"global\":true,\"numerical\":false,\"unit\":\"\",\"options\":[\"超高清\",\"全高清\",\"高清\"]}]}]');
 
 -- ----------------------------
--- Table structure for `tb_spu`
+-- Table structure for tb_spec_group
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_spec_group`;
+CREATE TABLE `tb_spec_group` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `cid` bigint(20) NOT NULL COMMENT '商品分类id,一个分类下有多个规格组',
+  `name` varchar(50) NOT NULL COMMENT '规格组的名称',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='规格组';
+
+-- ----------------------------
+-- Records of tb_spec_group
+-- ----------------------------
+INSERT INTO `tb_spec_group` VALUES ('1', '76', '尺寸');
+INSERT INTO `tb_spec_group` VALUES ('3', '76', '存储');
+
+-- ----------------------------
+-- Table structure for tb_spec_param
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_spec_param`;
+CREATE TABLE `tb_spec_param` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `cid` bigint(20) NOT NULL COMMENT '商品分类id',
+  `group_id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL COMMENT '参数名',
+  `numeric` tinyint(4) NOT NULL COMMENT '是否是数字类型参数，true false',
+  `unit` varchar(255) DEFAULT '' COMMENT '数字类型参数的单位，非数字类型为空',
+  `generic` tinyint(4) NOT NULL COMMENT '是否是sku通用属性 true false',
+  `searching` tinyint(4) NOT NULL COMMENT '是否用于搜索过滤，true false',
+  `segments` varchar(1000) DEFAULT '' COMMENT '数值类型参数，如果需要搜索，则添加分段间隔值 0.5-1.0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='规格参数';
+
+-- ----------------------------
+-- Records of tb_spec_param
+-- ----------------------------
+INSERT INTO `tb_spec_param` VALUES ('1', '76', '1', '打野', '1', '寸', '0', '0', '');
+INSERT INTO `tb_spec_param` VALUES ('4', '76', '1', '大小', '1', '立方', '1', '0', '');
+INSERT INTO `tb_spec_param` VALUES ('5', '76', '1', '搜索', '1', '皮', '1', '1', '0-5,5-8');
+
+-- ----------------------------
+-- Table structure for tb_spu
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_spu`;
 CREATE TABLE `tb_spu` (
@@ -2901,7 +2948,7 @@ INSERT INTO `tb_spu` VALUES ('207', 'oopp2', 'ppoo', '74', '75', '76', '2032', '
 INSERT INTO `tb_spu` VALUES ('215', '黑马游戏手机2', '流畅游戏体验，快到你不敢相信自己的手', '74', '75', '76', '325401', '1', '1', '2018-05-15 21:39:34', '2018-05-15 23:59:27');
 
 -- ----------------------------
--- Table structure for `tb_spu_detail`
+-- Table structure for tb_spu_detail
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_spu_detail`;
 CREATE TABLE `tb_spu_detail` (
@@ -3104,7 +3151,7 @@ INSERT INTO `tb_spu_detail` VALUES ('204', '<p><img src=\"https://img30.360buyim
 INSERT INTO `tb_spu_detail` VALUES ('215', '<p class=\"ql-align-center\"><img src=\"https://img13.360buyimg.com/cms/jfs/t17050/206/516927520/88714/4d2250d1/5a938547N4386663d.jpg\" height=\"240\" width=\"750\"></p><p><br></p>', '[{\"group\":\"主体\",\"params\":[{\"k\":\"品牌\",\"searchable\":false,\"global\":true,\"v\":\"黑马\"},{\"k\":\"型号\",\"searchable\":false,\"global\":true,\"v\":\"黑马3号\"},{\"k\":\"上市年份\",\"searchable\":false,\"global\":true,\"numerical\":true,\"unit\":\"年\",\"v\":\"2019\"}]},{\"group\":\"基本信息\",\"params\":[{\"k\":\"机身颜色\",\"searchable\":false,\"global\":false},{\"k\":\"机身重量（g）\",\"searchable\":false,\"global\":true,\"numerical\":true,\"unit\":\"g\",\"v\":\"198\"},{\"k\":\"机身材质工艺\",\"searchable\":false,\"global\":true,\"v\":\"金属\"}]},{\"group\":\"操作系统\",\"params\":[{\"k\":\"操作系统\",\"searchable\":true,\"global\":true,\"v\":\"安卓\"}]},{\"group\":\"主芯片\",\"params\":[{\"k\":\"CPU品牌\",\"searchable\":true,\"global\":true,\"v\":\"骁龙（Snapdragon)\"},{\"k\":\"CPU型号\",\"searchable\":false,\"global\":true,\"v\":\"骁龙845\"},{\"k\":\"CPU核数\",\"searchable\":true,\"global\":true,\"v\":\"八核\"},{\"k\":\"CPU频率\",\"searchable\":true,\"global\":true,\"numerical\":true,\"unit\":\"GHz\",\"v\":\"2.6\"}]},{\"group\":\"存储\",\"params\":[{\"k\":\"内存\",\"searchable\":true,\"global\":false,\"numerical\":false,\"unit\":\"\"},{\"k\":\"机身存储\",\"searchable\":true,\"global\":false,\"numerical\":false,\"unit\":\"\"}]},{\"group\":\"屏幕\",\"params\":[{\"k\":\"主屏幕尺寸（英寸）\",\"searchable\":true,\"global\":true,\"numerical\":true,\"unit\":\"英寸\",\"v\":\"5.9\"},{\"k\":\"分辨率\",\"searchable\":false,\"global\":true,\"v\":\"2180*1280\"}]},{\"group\":\"摄像头\",\"params\":[{\"k\":\"前置摄像头\",\"searchable\":true,\"global\":true,\"numerical\":true,\"unit\":\"万\",\"v\":\"1200\"},{\"k\":\"后置摄像头\",\"searchable\":true,\"global\":true,\"numerical\":true,\"unit\":\"万\",\"v\":\"1800\"}]},{\"group\":\"电池信息\",\"params\":[{\"k\":\"电池容量（mAh）\",\"searchable\":true,\"global\":true,\"numerical\":true,\"unit\":\"mAh\",\"v\":\"4000\"}]}]', '{\"机身颜色\":[\"深空黑\",\"苍穹灰\"],\"内存\":[\"8GB\"],\"机身存储\":[\"128GB\",\"64GB\"]}', '手机主机*1，电源适配器*1，USB Type-C数据线*1，Type-C To Audio转接线*1，取卡针*1，手机保护壳*1，保护膜*1，入门指南&三包凭证*1', '三年包换，只换不修');
 
 -- ----------------------------
--- Table structure for `tb_stock`
+-- Table structure for tb_stock
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_stock`;
 CREATE TABLE `tb_stock` (
@@ -3873,7 +3920,7 @@ INSERT INTO `tb_stock` VALUES ('27359021553', null, null, '99');
 INSERT INTO `tb_stock` VALUES ('27359021554', null, null, '99');
 
 -- ----------------------------
--- Table structure for `tb_user`
+-- Table structure for tb_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user`;
 CREATE TABLE `tb_user` (
@@ -3898,7 +3945,7 @@ INSERT INTO `tb_user` VALUES ('21', 'hugege', '0760bf52d18804f9b1ba9ec2526f74db'
 INSERT INTO `tb_user` VALUES ('27', 'liuyan', 'ee15b6016cd78661056c5701d6f343e7', '17623672016', '2018-05-01 18:25:30');
 
 -- ----------------------------
--- Table structure for `tb_user_coupon`
+-- Table structure for tb_user_coupon
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_user_coupon`;
 CREATE TABLE `tb_user_coupon` (
@@ -3914,7 +3961,7 @@ CREATE TABLE `tb_user_coupon` (
 -- ----------------------------
 
 -- ----------------------------
--- View structure for `cid3`
+-- View structure for cid3
 -- ----------------------------
 DROP VIEW IF EXISTS `cid3`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cid3` AS select `tb_category`.`parent_id` AS `parent_id` from `tb_category` group by `tb_category`.`parent_id` ;
