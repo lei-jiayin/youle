@@ -44,12 +44,19 @@ public class UploadService {
             if (image == null){
                 throw new YlException(ExceptionEnums.INVALID_FILE_TYPE);
             }
-            // 准备目标路径
-            File dest = new File(prop.getBaseUrl(),file.getOriginalFilename());
+            // 获取上传的文件名
+            String fileName = file.getOriginalFilename();
+            // 后缀
+            String suff = fileName.substring(fileName.indexOf("."));
+            System.out.println(suff);
+            String newFileName = System.currentTimeMillis()+suff;
+
+            // 准备目标路径 baseUrl 必须指定真实准确的路径 否则 路径指向会指向tomcat下的子文件夹中
+            File dest = new File(prop.getBaseUrl(),newFileName);
             //1. 保存文件
             file.transferTo(dest);
-            //2. 返回路径 D:\IdeaProjects\youle\yl-upload\src\upload\1.jpg yl-upload/src/upload/1.jpg
-            return "http://image.youle.com/" + file.getOriginalFilename();
+            //2. 返回路径
+            return "http://image.youle.com/" + newFileName;
         } catch (IOException e) {
             // 上传文件失败
             log.error("上传文件失败！",e);

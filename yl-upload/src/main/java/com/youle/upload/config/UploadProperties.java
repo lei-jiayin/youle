@@ -11,7 +11,7 @@ import java.util.List;
  * @date 2019/5/31 17:33
  */
 @Data
-@ConfigurationProperties(prefix = "ly.upload")
+@ConfigurationProperties(prefix = "yl.upload")
 public class UploadProperties {
     private String baseUrl;
     private List<String> allowTypes;

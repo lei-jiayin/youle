@@ -17,7 +17,7 @@ eureka:
 
 yl:
   upload:
-    baseUrl: http://image.youle.com/
+    baseUrl: D:\IdeaProjects\youle\yl-upload\src\upload
     allowTypes:
       - image/jpeg
       - image/png
