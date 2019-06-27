@@ -76,4 +76,20 @@ public class BrandService {
             }
         }
     }
+
+    public Brand queryById(Long id){
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+        if (brand == null){
+            throw new YlException(ExceptionEnums.BRAND_NOT_FOUND);
+        }
+        return brand;
+    }
+
+    public List<Brand> queryByCid(Long cid) {
+        List<Brand> brands = brandMapper.queryByCid(cid);
+        if (CollectionUtils.isEmpty(brands)){
+            throw new YlException(ExceptionEnums.BRAND_NOT_FOUND);
+        }
+        return brands;
+    }
 }

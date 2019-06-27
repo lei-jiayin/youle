@@ -57,10 +57,18 @@ public class SpecificationController {
      * @return
      */
     @GetMapping("params")
-    public ResponseEntity<List<SpecParam>> queryParamByGid(@RequestParam("gid")Long gid){
+    public ResponseEntity<List<SpecParam>> queryParamByGid(@RequestParam(value = "gid",required = false)Long gid,
+                                                           @RequestParam(value = "cid",required = false)Long cid,
+                                                           @RequestParam(value = "searching",required = false)Boolean searching
+    ){
         return ResponseEntity.ok(specificationService.querySpecParamByGid(gid));
     }
 
+    /**
+     * 保存规格参数
+     * @param specParam
+     * @return
+     */
     @PostMapping("param")
     public ResponseEntity<Void> saveSpecParam(@RequestBody SpecParam specParam){
         specificationService.saveSpecParam(specParam);

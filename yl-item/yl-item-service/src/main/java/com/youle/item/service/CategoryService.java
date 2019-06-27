@@ -29,6 +29,13 @@ public class CategoryService {
             throw new YlException(ExceptionEnums.CATEGORY_NOT_FOUND);
         }
         return list;
+    }
 
+    public List<Category> queryByIds(List<Long> ids){
+        List<Category> categories = categoryMapper.selectByIdList(ids);
+        if (CollectionUtils.isEmpty(categories)){
+            throw new YlException(ExceptionEnums.CATEGORY_NOT_FOUND);
+        }
+        return categories;
     }
 }
