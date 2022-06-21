@@ -36,7 +36,7 @@
         <!--项目youle自己的版本-->
         <youle.latest.version>1.0.0-SNAPSHOT</youle.latest.version>
         <!--数据库连接版本-->
-        <mysql.version>5.1.6</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <!--分页组件版本-->
         <pageHelper.starter.version>1.2.5</pageHelper.starter.version>
         <fastDFS.client.version>1.26.1-RELEASE</fastDFS.client.version>
